@@ -1,0 +1,240 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Love 🎀</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  background:black;
+  color:white;
+  font-family:'Poppins',sans-serif;
+  text-align:center;
+}
+
+h1{
+  font-family:'Pacifico',cursive;
+  color:#ffb6c1;
+  font-size:3rem;
+}
+
+.subtitle{
+  color:#ffc0cb;
+  margin-bottom:30px;
+}
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.tab-btn{
+  background:#111;
+  border:2px solid #ffb6c1;
+  color:white;
+  padding:12px 20px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:1rem;
+}
+
+.tab-btn:hover{
+  background:#ffb6c1;
+  color:black;
+}
+
+.section{
+  display:none;
+  max-width:900px;
+  margin:40px auto;
+  background:#111;
+  border-radius:25px;
+  padding:30px;
+  box-shadow:0 0 25px rgba(255,182,193,0.4);
+  text-align:left;
+  line-height:1.9;
+}
+
+.section.active{
+  display:block;
+}
+
+.kitty{
+  text-align:center;
+  font-size:3.5rem;
+  margin:20px 0;
+}
+
+span{
+  color:#ffb6c1;
+  font-weight:600;
+}
+
+.memories-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.memory{
+  background:black;
+  border:1px solid #ffb6c1;
+  border-radius:18px;
+  padding:15px;
+  text-align:center;
+}
+
+.memory-img{
+  width:100%;
+  border-radius:15px;
+  border:2px solid #ffb6c1;
+  box-shadow:0 0 20px rgba(255,182,193,0.5);
+  transition:0.4s;
+}
+
+.memory-img:hover{
+  transform:scale(1.05);
+}
+
+.gift-box{
+  text-align:center;
+  margin-top:20px;
+}
+
+.gift-btn{
+  background:#ffb6c1;
+  color:black;
+  border:none;
+  padding:15px 30px;
+  border-radius:30px;
+  font-size:1.1rem;
+  cursor:pointer;
+}
+
+.hidden-gift{
+  display:none;
+  margin-top:25px;
+  font-size:1.1rem;
+}
+
+footer{
+  margin:50px 0;
+  color:#aaa;
+  font-size:0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Birthday My Love 🎀</h1>
+<p class="subtitle">A little world made just for you 🖤</p>
+
+<div class="tabs">
+  <button class="tab-btn" onclick="openSection('message')">💌 Message For You</button>
+  <button class="tab-btn" onclick="openSection('memories')">📸 Memories</button>
+  <button class="tab-btn" onclick="openSection('gift')">🎁 Gift</button>
+</div>
+
+<!-- 💌 MESSAGE SECTION -->
+<div id="message" class="section active">
+  <div class="kitty">🐱🎀</div>
+  <p>Happy Birthday <span>my beautiful girl</span>.</p>
+
+  <p>
+    You are the softest part of my life and the strongest reason behind my smiles.
+    Loving you feels easy, natural, and magical all at once.
+  </p>
+
+  <p>
+    Every day with you feels special, but today is extra special because
+    <span>you were born</span>.
+  </p>
+
+  <p>
+    I love the way you talk, laugh, get excited over little things,
+    and how effortlessly cute you are without even trying.
+  </p>
+
+  <p>
+    I promise to cherish you, support you, annoy you, and love you
+    in every version of you.
+  </p>
+
+  <p>
+    Stay cute. Stay confident. Stay mine. 🖤🎀
+  </p>
+
+  <p>
+    Forever yours,<br>
+    <span>Your Boy</span>
+  </p>
+</div>
+
+<!-- 📸 MEMORIES SECTION -->
+<div id="memories" class="section">
+  <div class="kitty">🎀📸</div>
+
+  <div class="memories-grid">
+
+    <div class="memory">
+      <img src="https://i.ibb.co/JwcG8Nvv/IMG-4990.png" class="memory-img">
+      <p>Us. Always. 🖤</p>
+    </div>
+
+    <div class="memory">
+      <img src="https://i.ibb.co/JwcG8Nvv/IMG-4990.png" class="memory-img">
+      <p>Same love, different moments 🎀</p>
+    </div>
+
+    <div class="memory">
+      <img src="https://i.ibb.co/JwcG8Nvv/IMG-4990.png" class="memory-img">
+      <p>My favorite memory is you 💕</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- 🎁 GIFT SECTION -->
+<div id="gift" class="section">
+  <div class="kitty">🎁🎀</div>
+
+  <div class="gift-box">
+    <p>Click to open your gift 💖</p>
+    <button class="gift-btn" onclick="openGift()">Open Gift</button>
+
+    <div class="hidden-gift" id="giftText">
+      🎉 Surpriseeee 🎉<br><br>
+      Your real gift is <span>my love, my time, my loyalty</span>  
+      and all the moments we’re about to live together.<br><br>
+      This website is just a reminder that  
+      <span>you are loved more than words</span> 🖤🎀
+    </div>
+  </div>
+</div>
+
+<footer>
+Made with black hearts, bows & endless love 🖤🎀
+</footer>
+
+<script>
+function openSection(id){
+  document.querySelectorAll('.section').forEach(sec=>{
+    sec.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+}
+
+function openGift(){
+  document.getElementById('giftText').style.display='block';
+}
+</script>
+
+</body>
+</html>
