@@ -1,0 +1,360 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:Poppins, sans-serif;
+  background:#ffe6f0;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+/* LOCK SCREEN */
+#lock{
+  position:fixed;
+  inset:0;
+  background:black;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+#lock div{max-width:700px}
+#lock input{
+  padding:10px;
+  font-size:18px;
+  text-align:center;
+}
+#lock button{padding:10px 25px;margin-top:10px}
+
+/* MAIN SITE */
+#site{
+  display:none;
+  padding-top:80px;
+  animation:fadeIn .8s ease forwards;
+}
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* BOWS */
+.bow{
+  position:fixed;
+  width:70px;
+  z-index:10;
+}
+.tl{top:10px;left:10px}
+.tr{top:10px;right:10px}
+.bl{bottom:10px;left:10px}
+.br{bottom:10px;right:10px}
+
+/* HEADER */
+h1{
+  font-family:Pacifico;
+  color:#ff4fa3;
+  font-size:3rem;
+}
+
+/* NAV */
+nav{margin:30px 0}
+nav button{
+  padding:12px 24px;
+  border-radius:30px;
+  border:2px solid #ff4fa3;
+  background:white;
+  cursor:pointer;
+  margin:5px;
+  transition:.3s;
+}
+nav button:hover{
+  background:#ff4fa3;
+  color:white;
+}
+
+/* SECTIONS */
+.section{
+  display:none;
+  max-width:900px;
+  margin:20px auto;
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  animation:slideUp .6s ease forwards;
+}
+.section.active{display:block}
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* HELLO KITTY */
+.kitty img{
+  width:120px;
+  animation:float 4s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+
+/* MESSAGE */
+#typedText{
+  white-space:pre-wrap;
+  line-height:1.6;
+}
+
+/* MEMORIES */
+.memories{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+/* POLAROID */
+.polaroid{
+  background:white;
+  padding:12px 12px 40px;
+  width:220px;
+  border-radius:6px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.25);
+  transition:transform .4s ease;
+}
+.polaroid:nth-child(1){transform:rotate(-6deg);}
+.polaroid:nth-child(2){transform:rotate(3deg);}
+.polaroid:nth-child(3){transform:rotate(-2deg);}
+.polaroid:hover{transform:rotate(0deg) scale(1.05);}
+.polaroid img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  border-radius:3px;
+}
+.polaroid p{
+  margin-top:10px;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* GIFT */
+.big-gift{
+  font-size:120px;
+  cursor:pointer;
+  transition:.6s;
+}
+.big-gift.slide{
+  transform:translateX(300px);
+  opacity:0;
+}
+.shake{
+  animation:shake .3s;
+}
+@keyframes shake{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-6px)}
+  50%{transform:translateX(6px)}
+  75%{transform:translateX(-6px)}
+  100%{transform:translateX(0)}
+}
+.surprise{
+  display:none;
+  animation:pop .7s ease forwards;
+}
+@keyframes pop{
+  from{opacity:0;transform:scale(.7)}
+  to{opacity:1;transform:scale(1)}
+}
+.surprise img{
+  width:220px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+/* CONFETTI */
+.confetti{
+  position:fixed;
+  bottom:-60px;
+  pointer-events:none;
+  animation:confettiFly 2.5s linear forwards;
+  z-index:999;
+}
+@keyframes confettiFly{
+  to{
+    transform:translate(var(--x), var(--y)) rotate(var(--r));
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK -->
+<div id="lock">
+  <div>
+    <p>
+      I LOVE YOU.<br><br>
+      I KNOW WE ARE ON CALL.<br><br>
+      SAY I LOVE YOU TO ME<br>
+      AND I WILL TELL YOU PASSWORD TO CONTINUE.
+    </p>
+    <input id="password" placeholder="Password">
+    <br>
+    <button onclick="unlock()">Continue</button>
+  </div>
+</div>
+
+<!-- SITE -->
+<div id="site">
+
+<img class="bow tl" src="https://static.vecteezy.com/system/resources/previews/001/202/738/non_2x/bow-png.png">
+<img class="bow tr" src="https://static.vecteezy.com/system/resources/previews/001/202/738/non_2x/bow-png.png">
+<img class="bow bl" src="https://static.vecteezy.com/system/resources/previews/001/202/738/non_2x/bow-png.png">
+<img class="bow br" src="https://static.vecteezy.com/system/resources/previews/001/202/738/non_2x/bow-png.png">
+
+<h1>Happy Birthday Baby 🎀</h1>
+
+<nav>
+  <button onclick="openMessage()">💌 Message</button>
+  <button onclick="showSection('mem')">📸 Memories</button>
+  <button onclick="showSection('gift')">🎁 Gift</button>
+</nav>
+
+<!-- MESSAGE -->
+<div id="msg" class="section">
+  <div class="kitty">
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG22.png">
+  </div>
+  <p id="typedText"></p>
+</div>
+
+<!-- MEMORIES -->
+<div id="mem" class="section">
+  <div class="memories">
+    <div class="polaroid">
+      <img src="https://i.ibb.co/Y7K8wt7M/IMG-0569.png">
+      <p>OUR FIRST VC 💗</p>
+    </div>
+    <div class="polaroid">
+      <img src="https://i.ibb.co/7JF1jR1J/IMG-0022.jpg">
+      <p>I LOVE YOU 💗💗</p>
+    </div>
+    <div class="polaroid">
+      <img src="https://i.ibb.co/20S88T0x/IMG-2839.jpg">
+      <p>OUR DIWALI TOGETHER 🪔</p>
+    </div>
+  </div>
+</div>
+
+<!-- GIFT -->
+<div id="gift" class="section">
+  <p><b>TAP 3 TIMES TO OPEN👇👇👇</b></p>
+  <div id="giftEmoji" class="big-gift">🎁</div>
+  <div id="surprise" class="surprise">
+    <img src="https://i.ibb.co/Q3VXBxGL/IMG-2803.jpg">
+    <p><b>I AM YOUR GIFT 😛😛<br>my love and everything is yours</b></p>
+  </div>
+</div>
+
+</div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const messageText = `HAPPY BIRTHDAY BABY <333
+
+I tried my best to make your birthday memorable and special like you wanted to..
+this is a small gift from me but yeah it took a lot of time to make this site.
+I had to make it from scratch and this is all my idea :)
+i hope you like it and its makes you feel special 💖🫂
+
+You are prettiest girl my eyes have ever seen👀💗
+
+I love you so so much and thanks to uncle aunty they made the mistake and you were born😛😛
+
+You will be always special to me not only on birthday or anivesary😙
+Cheer up now you finally 18 and now you can MAKE YOUR OWN DECISIONS 😳😳
+just dont get any idea of leaving me knowing this 🤫🤫🤫
+and always stay cute, pretty, happy and hotl like this🥵
+
+now chop chop go to memories i have some best pictures of us together👉👉`;
+
+let index=0, started=false;
+
+function unlock(){
+  if(password.value==="0000"){
+    lock.style.display="none";
+    site.style.display="block";
+    bgMusic.volume=0.3;
+    bgMusic.play();
+    launchConfetti();
+  }
+}
+
+function openMessage(){
+  showSection('msg');
+  if(!started){
+    started=true;
+    typeMessage();
+  }
+}
+
+function typeMessage(){
+  if(index<messageText.length){
+    typedText.innerText+=messageText.charAt(index);
+    index++;
+    setTimeout(typeMessage,35);
+  }
+}
+
+function showSection(id){
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+let taps=0;
+giftEmoji.onclick=function(){
+  taps++;
+  if(taps<3){
+    this.classList.add("shake");
+    setTimeout(()=>this.classList.remove("shake"),300);
+  }
+  if(taps===3){
+    surprise.style.display="block";
+    setTimeout(()=>this.classList.add("slide"),300);
+    launchConfetti();
+  }
+};
+
+function launchConfetti(){
+  for(let i=0;i<30;i++){
+    const c=document.createElement("img");
+    c.src=Math.random()>0.5
+      ? "https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG22.png"
+      : "https://static.vecteezy.com/system/resources/previews/001/202/738/non_2x/bow-png.png";
+    c.className="confetti";
+    c.style.setProperty("--x",(Math.random()*600-300)+"px");
+    c.style.setProperty("--y",-(Math.random()*800+200)+"px");
+    c.style.setProperty("--r",(Math.random()*720)+"deg");
+    c.style.left=Math.random()*100+"vw";
+    c.style.width="30px";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),3000);
+  }
+}
+</script>
+
+</body>
+</html>
